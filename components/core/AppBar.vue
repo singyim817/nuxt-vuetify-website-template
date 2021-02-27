@@ -62,7 +62,9 @@
     },
 
     methods: {
-      ...mapMutations(['toggleDrawer']),
+      ...mapMutations({
+        toggleDrawer: 'layout/toggleDrawer'
+      }),
       onClick (e, item) {
         e.stopPropagation()
 

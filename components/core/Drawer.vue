@@ -35,7 +35,7 @@
       }),
       drawer: {
         get () {
-          return this.$store.state.drawer
+          return this.$store.state.layout.drawer
         },
         set (val) {
           this.setDrawer(val)
@@ -44,7 +44,9 @@
     },
 
     methods: {
-      ...mapMutations(['setDrawer']),
+      ...mapMutations({
+        setDrawer: 'layout/setDrawer'
+      }),
       onClick (e, item) {
         e.stopPropagation()
 
